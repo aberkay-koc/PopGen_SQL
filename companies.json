@@ -1,0 +1,1502 @@
+[
+    {
+        "Company ID": 1,
+        "Company Name": "Herrera and Sons",
+        "Country ID": 1,
+        "Sector": "Education",
+        "Q1 Earnings": 5682290,
+        "Q2 Earnings": 6412192,
+        "Q3 Earnings": 8680743,
+        "Q4 Earnings": 4894877
+    },
+    {
+        "Company ID": 2,
+        "Company Name": "Harris-Stone",
+        "Country ID": 6,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 8153972,
+        "Q2 Earnings": 2194956,
+        "Q3 Earnings": 9591711,
+        "Q4 Earnings": 7949574
+    },
+    {
+        "Company ID": 3,
+        "Company Name": "Smith-Phillips",
+        "Country ID": 7,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 2143973,
+        "Q2 Earnings": 8660269,
+        "Q3 Earnings": 6450229,
+        "Q4 Earnings": 5611741
+    },
+    {
+        "Company ID": 4,
+        "Company Name": "Taylor Group",
+        "Country ID": 1,
+        "Sector": "Healthcare",
+        "Q1 Earnings": 8042397,
+        "Q2 Earnings": 3043982,
+        "Q3 Earnings": 6462911,
+        "Q4 Earnings": 6238613
+    },
+    {
+        "Company ID": 5,
+        "Company Name": "White, Palmer and Stafford",
+        "Country ID": 5,
+        "Sector": "Retail",
+        "Q1 Earnings": 9689365,
+        "Q2 Earnings": 9100940,
+        "Q3 Earnings": 2134208,
+        "Q4 Earnings": 8607179
+    },
+    {
+        "Company ID": 6,
+        "Company Name": "Koch-Anderson",
+        "Country ID": 9,
+        "Sector": "Finance",
+        "Q1 Earnings": 6892994,
+        "Q2 Earnings": 6855333,
+        "Q3 Earnings": 3897816,
+        "Q4 Earnings": 5378254
+    },
+    {
+        "Company ID": 7,
+        "Company Name": "Mitchell-Lloyd",
+        "Country ID": 4,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 1196327,
+        "Q2 Earnings": 8490272,
+        "Q3 Earnings": 7331696,
+        "Q4 Earnings": 7564330
+    },
+    {
+        "Company ID": 8,
+        "Company Name": "Aguilar and Sons",
+        "Country ID": 5,
+        "Sector": "Finance",
+        "Q1 Earnings": 9525220,
+        "Q2 Earnings": 5795906,
+        "Q3 Earnings": 2986804,
+        "Q4 Earnings": 2222745
+    },
+    {
+        "Company ID": 9,
+        "Company Name": "Bates-Ward",
+        "Country ID": 5,
+        "Sector": "Technology",
+        "Q1 Earnings": 7148129,
+        "Q2 Earnings": 6540857,
+        "Q3 Earnings": 8113360,
+        "Q4 Earnings": 4413289
+    },
+    {
+        "Company ID": 10,
+        "Company Name": "Schneider-Thompson",
+        "Country ID": 9,
+        "Sector": "Finance",
+        "Q1 Earnings": 9878069,
+        "Q2 Earnings": 3753929,
+        "Q3 Earnings": 2414435,
+        "Q4 Earnings": 2591075
+    },
+    {
+        "Company ID": 11,
+        "Company Name": "Silva, Turner and Hammond",
+        "Country ID": 1,
+        "Sector": "Retail",
+        "Q1 Earnings": 5088128,
+        "Q2 Earnings": 8255048,
+        "Q3 Earnings": 2572689,
+        "Q4 Earnings": 8447408
+    },
+    {
+        "Company ID": 12,
+        "Company Name": "Williams, King and Diaz",
+        "Country ID": 2,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 4549628,
+        "Q2 Earnings": 4679380,
+        "Q3 Earnings": 9216501,
+        "Q4 Earnings": 6387720
+    },
+    {
+        "Company ID": 13,
+        "Company Name": "Hall Ltd",
+        "Country ID": 1,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 1052147,
+        "Q2 Earnings": 3863494,
+        "Q3 Earnings": 5187283,
+        "Q4 Earnings": 2595331
+    },
+    {
+        "Company ID": 14,
+        "Company Name": "Morales-Alvarez",
+        "Country ID": 6,
+        "Sector": "Technology",
+        "Q1 Earnings": 4723771,
+        "Q2 Earnings": 7887479,
+        "Q3 Earnings": 8757818,
+        "Q4 Earnings": 4438611
+    },
+    {
+        "Company ID": 15,
+        "Company Name": "Barrett, Wright and Walters",
+        "Country ID": 6,
+        "Sector": "Healthcare",
+        "Q1 Earnings": 4131552,
+        "Q2 Earnings": 6931351,
+        "Q3 Earnings": 7166691,
+        "Q4 Earnings": 4939758
+    },
+    {
+        "Company ID": 16,
+        "Company Name": "Woodard, Smith and Thomas",
+        "Country ID": 2,
+        "Sector": "Education",
+        "Q1 Earnings": 2338005,
+        "Q2 Earnings": 2038152,
+        "Q3 Earnings": 9566747,
+        "Q4 Earnings": 6427663
+    },
+    {
+        "Company ID": 17,
+        "Company Name": "Thompson-Gray",
+        "Country ID": 5,
+        "Sector": "Retail",
+        "Q1 Earnings": 3440904,
+        "Q2 Earnings": 4779776,
+        "Q3 Earnings": 6266489,
+        "Q4 Earnings": 8583526
+    },
+    {
+        "Company ID": 18,
+        "Company Name": "Larsen, Valencia and Greer",
+        "Country ID": 1,
+        "Sector": "Technology",
+        "Q1 Earnings": 7700922,
+        "Q2 Earnings": 6441072,
+        "Q3 Earnings": 5294810,
+        "Q4 Earnings": 3033938
+    },
+    {
+        "Company ID": 19,
+        "Company Name": "Gonzalez LLC",
+        "Country ID": 3,
+        "Sector": "Finance",
+        "Q1 Earnings": 5076902,
+        "Q2 Earnings": 2225398,
+        "Q3 Earnings": 6233872,
+        "Q4 Earnings": 2289789
+    },
+    {
+        "Company ID": 20,
+        "Company Name": "Johnson, Castillo and Wood",
+        "Country ID": 7,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 7359757,
+        "Q2 Earnings": 6296989,
+        "Q3 Earnings": 9178591,
+        "Q4 Earnings": 6914967
+    },
+    {
+        "Company ID": 21,
+        "Company Name": "Jones-Powell",
+        "Country ID": 7,
+        "Sector": "Finance",
+        "Q1 Earnings": 2052938,
+        "Q2 Earnings": 6834801,
+        "Q3 Earnings": 1060214,
+        "Q4 Earnings": 6563524
+    },
+    {
+        "Company ID": 22,
+        "Company Name": "Gonzalez, Higgins and Roman",
+        "Country ID": 3,
+        "Sector": "Education",
+        "Q1 Earnings": 8335693,
+        "Q2 Earnings": 2495424,
+        "Q3 Earnings": 9172059,
+        "Q4 Earnings": 5113631
+    },
+    {
+        "Company ID": 23,
+        "Company Name": "Dean PLC",
+        "Country ID": 3,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 4655494,
+        "Q2 Earnings": 8710971,
+        "Q3 Earnings": 5896985,
+        "Q4 Earnings": 4528862
+    },
+    {
+        "Company ID": 24,
+        "Company Name": "Herring-Mckay",
+        "Country ID": 3,
+        "Sector": "Education",
+        "Q1 Earnings": 8704187,
+        "Q2 Earnings": 6048314,
+        "Q3 Earnings": 8345141,
+        "Q4 Earnings": 5515765
+    },
+    {
+        "Company ID": 25,
+        "Company Name": "Diaz, Bishop and Morgan",
+        "Country ID": 4,
+        "Sector": "Healthcare",
+        "Q1 Earnings": 8503242,
+        "Q2 Earnings": 2272855,
+        "Q3 Earnings": 2696202,
+        "Q4 Earnings": 6808625
+    },
+    {
+        "Company ID": 26,
+        "Company Name": "Wilson, Williams and Phillips",
+        "Country ID": 7,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 9175146,
+        "Q2 Earnings": 2607488,
+        "Q3 Earnings": 2753990,
+        "Q4 Earnings": 8253353
+    },
+    {
+        "Company ID": 27,
+        "Company Name": "Jimenez-Johnson",
+        "Country ID": 5,
+        "Sector": "Finance",
+        "Q1 Earnings": 7171120,
+        "Q2 Earnings": 7562810,
+        "Q3 Earnings": 2561195,
+        "Q4 Earnings": 6314894
+    },
+    {
+        "Company ID": 28,
+        "Company Name": "Tate PLC",
+        "Country ID": 8,
+        "Sector": "Finance",
+        "Q1 Earnings": 7251347,
+        "Q2 Earnings": 1681426,
+        "Q3 Earnings": 9376978,
+        "Q4 Earnings": 3032147
+    },
+    {
+        "Company ID": 29,
+        "Company Name": "Jackson, Brooks and Price",
+        "Country ID": 10,
+        "Sector": "Finance",
+        "Q1 Earnings": 4177229,
+        "Q2 Earnings": 2144713,
+        "Q3 Earnings": 5445357,
+        "Q4 Earnings": 3531325
+    },
+    {
+        "Company ID": 30,
+        "Company Name": "Adams-Page",
+        "Country ID": 8,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 4742083,
+        "Q2 Earnings": 9821556,
+        "Q3 Earnings": 5402796,
+        "Q4 Earnings": 8473848
+    },
+    {
+        "Company ID": 31,
+        "Company Name": "Mack-Noble",
+        "Country ID": 8,
+        "Sector": "Retail",
+        "Q1 Earnings": 7238611,
+        "Q2 Earnings": 7726375,
+        "Q3 Earnings": 5547478,
+        "Q4 Earnings": 5766663
+    },
+    {
+        "Company ID": 32,
+        "Company Name": "Henderson LLC",
+        "Country ID": 5,
+        "Sector": "Technology",
+        "Q1 Earnings": 6879854,
+        "Q2 Earnings": 2718087,
+        "Q3 Earnings": 8847002,
+        "Q4 Earnings": 8543940
+    },
+    {
+        "Company ID": 33,
+        "Company Name": "Howard and Sons",
+        "Country ID": 3,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 8621969,
+        "Q2 Earnings": 2471596,
+        "Q3 Earnings": 7870874,
+        "Q4 Earnings": 6334809
+    },
+    {
+        "Company ID": 34,
+        "Company Name": "Nixon-Smith",
+        "Country ID": 6,
+        "Sector": "Finance",
+        "Q1 Earnings": 8528455,
+        "Q2 Earnings": 5617506,
+        "Q3 Earnings": 5646583,
+        "Q4 Earnings": 9542920
+    },
+    {
+        "Company ID": 35,
+        "Company Name": "Herrera-Miller",
+        "Country ID": 8,
+        "Sector": "Technology",
+        "Q1 Earnings": 8769557,
+        "Q2 Earnings": 9526572,
+        "Q3 Earnings": 5536492,
+        "Q4 Earnings": 4502070
+    },
+    {
+        "Company ID": 36,
+        "Company Name": "Wilson, White and Alexander",
+        "Country ID": 7,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 4722363,
+        "Q2 Earnings": 7057973,
+        "Q3 Earnings": 8893678,
+        "Q4 Earnings": 2604166
+    },
+    {
+        "Company ID": 37,
+        "Company Name": "Kelley, Jones and Little",
+        "Country ID": 6,
+        "Sector": "Retail",
+        "Q1 Earnings": 8907631,
+        "Q2 Earnings": 4392905,
+        "Q3 Earnings": 3406926,
+        "Q4 Earnings": 9088114
+    },
+    {
+        "Company ID": 38,
+        "Company Name": "Snyder LLC",
+        "Country ID": 8,
+        "Sector": "Finance",
+        "Q1 Earnings": 9159201,
+        "Q2 Earnings": 9720828,
+        "Q3 Earnings": 7344317,
+        "Q4 Earnings": 9596821
+    },
+    {
+        "Company ID": 39,
+        "Company Name": "Hawkins Ltd",
+        "Country ID": 9,
+        "Sector": "Healthcare",
+        "Q1 Earnings": 4049084,
+        "Q2 Earnings": 1270292,
+        "Q3 Earnings": 9699142,
+        "Q4 Earnings": 6186666
+    },
+    {
+        "Company ID": 40,
+        "Company Name": "Lucas, Church and Huff",
+        "Country ID": 5,
+        "Sector": "Finance",
+        "Q1 Earnings": 9644396,
+        "Q2 Earnings": 2367625,
+        "Q3 Earnings": 4253271,
+        "Q4 Earnings": 7172901
+    },
+    {
+        "Company ID": 41,
+        "Company Name": "Edwards PLC",
+        "Country ID": 8,
+        "Sector": "Healthcare",
+        "Q1 Earnings": 3585310,
+        "Q2 Earnings": 2861499,
+        "Q3 Earnings": 9208641,
+        "Q4 Earnings": 6538684
+    },
+    {
+        "Company ID": 42,
+        "Company Name": "Burke PLC",
+        "Country ID": 3,
+        "Sector": "Retail",
+        "Q1 Earnings": 6597798,
+        "Q2 Earnings": 4761160,
+        "Q3 Earnings": 5382219,
+        "Q4 Earnings": 5163536
+    },
+    {
+        "Company ID": 43,
+        "Company Name": "Miller-Harris",
+        "Country ID": 6,
+        "Sector": "Retail",
+        "Q1 Earnings": 9353560,
+        "Q2 Earnings": 4487986,
+        "Q3 Earnings": 6487327,
+        "Q4 Earnings": 5988046
+    },
+    {
+        "Company ID": 44,
+        "Company Name": "Buchanan, Williams and Townsend",
+        "Country ID": 9,
+        "Sector": "Education",
+        "Q1 Earnings": 3621982,
+        "Q2 Earnings": 3462453,
+        "Q3 Earnings": 8297137,
+        "Q4 Earnings": 4761631
+    },
+    {
+        "Company ID": 45,
+        "Company Name": "French, Evans and Miller",
+        "Country ID": 2,
+        "Sector": "Healthcare",
+        "Q1 Earnings": 3965456,
+        "Q2 Earnings": 5128196,
+        "Q3 Earnings": 9621839,
+        "Q4 Earnings": 6484774
+    },
+    {
+        "Company ID": 46,
+        "Company Name": "Blevins Ltd",
+        "Country ID": 4,
+        "Sector": "Education",
+        "Q1 Earnings": 2129552,
+        "Q2 Earnings": 2024532,
+        "Q3 Earnings": 1493029,
+        "Q4 Earnings": 5202350
+    },
+    {
+        "Company ID": 47,
+        "Company Name": "Johnson, Carter and Whitaker",
+        "Country ID": 1,
+        "Sector": "Retail",
+        "Q1 Earnings": 2055513,
+        "Q2 Earnings": 7045637,
+        "Q3 Earnings": 7583689,
+        "Q4 Earnings": 1099954
+    },
+    {
+        "Company ID": 48,
+        "Company Name": "Roberts Inc",
+        "Country ID": 1,
+        "Sector": "Education",
+        "Q1 Earnings": 4172738,
+        "Q2 Earnings": 2501227,
+        "Q3 Earnings": 5307023,
+        "Q4 Earnings": 7877142
+    },
+    {
+        "Company ID": 49,
+        "Company Name": "Reeves-Schultz",
+        "Country ID": 4,
+        "Sector": "Technology",
+        "Q1 Earnings": 9066841,
+        "Q2 Earnings": 1304063,
+        "Q3 Earnings": 3439728,
+        "Q4 Earnings": 8369619
+    },
+    {
+        "Company ID": 50,
+        "Company Name": "Hernandez PLC",
+        "Country ID": 4,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 2478897,
+        "Q2 Earnings": 3252815,
+        "Q3 Earnings": 9146251,
+        "Q4 Earnings": 5588812
+    },
+    {
+        "Company ID": 51,
+        "Company Name": "Robinson-Cruz",
+        "Country ID": 1,
+        "Sector": "Education",
+        "Q1 Earnings": 7313291,
+        "Q2 Earnings": 2033397,
+        "Q3 Earnings": 5135886,
+        "Q4 Earnings": 5881122
+    },
+    {
+        "Company ID": 52,
+        "Company Name": "Stone-Miller",
+        "Country ID": 9,
+        "Sector": "Finance",
+        "Q1 Earnings": 7380126,
+        "Q2 Earnings": 6590039,
+        "Q3 Earnings": 6438502,
+        "Q4 Earnings": 7029391
+    },
+    {
+        "Company ID": 53,
+        "Company Name": "Herrera-Hebert",
+        "Country ID": 9,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 1260631,
+        "Q2 Earnings": 6598453,
+        "Q3 Earnings": 8049248,
+        "Q4 Earnings": 1403686
+    },
+    {
+        "Company ID": 54,
+        "Company Name": "Hernandez, Campbell and Brown",
+        "Country ID": 4,
+        "Sector": "Finance",
+        "Q1 Earnings": 6418157,
+        "Q2 Earnings": 6777037,
+        "Q3 Earnings": 4512789,
+        "Q4 Earnings": 2056608
+    },
+    {
+        "Company ID": 55,
+        "Company Name": "Robles-Williams",
+        "Country ID": 7,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 9838608,
+        "Q2 Earnings": 2027750,
+        "Q3 Earnings": 6018387,
+        "Q4 Earnings": 3119341
+    },
+    {
+        "Company ID": 56,
+        "Company Name": "White-Acosta",
+        "Country ID": 1,
+        "Sector": "Finance",
+        "Q1 Earnings": 1397801,
+        "Q2 Earnings": 4834243,
+        "Q3 Earnings": 1605996,
+        "Q4 Earnings": 9076836
+    },
+    {
+        "Company ID": 57,
+        "Company Name": "Watts, Andrews and Mahoney",
+        "Country ID": 8,
+        "Sector": "Education",
+        "Q1 Earnings": 6888617,
+        "Q2 Earnings": 8033742,
+        "Q3 Earnings": 8978693,
+        "Q4 Earnings": 5539785
+    },
+    {
+        "Company ID": 58,
+        "Company Name": "Watkins Group",
+        "Country ID": 4,
+        "Sector": "Finance",
+        "Q1 Earnings": 5093771,
+        "Q2 Earnings": 4611152,
+        "Q3 Earnings": 2775341,
+        "Q4 Earnings": 6528334
+    },
+    {
+        "Company ID": 59,
+        "Company Name": "Williams Ltd",
+        "Country ID": 2,
+        "Sector": "Technology",
+        "Q1 Earnings": 1029357,
+        "Q2 Earnings": 1905617,
+        "Q3 Earnings": 7322670,
+        "Q4 Earnings": 7254535
+    },
+    {
+        "Company ID": 60,
+        "Company Name": "Zamora Group",
+        "Country ID": 4,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 3872515,
+        "Q2 Earnings": 2412926,
+        "Q3 Earnings": 9028586,
+        "Q4 Earnings": 4887292
+    },
+    {
+        "Company ID": 61,
+        "Company Name": "Collier, Scott and Hale",
+        "Country ID": 5,
+        "Sector": "Education",
+        "Q1 Earnings": 5433886,
+        "Q2 Earnings": 9817278,
+        "Q3 Earnings": 4390355,
+        "Q4 Earnings": 1948822
+    },
+    {
+        "Company ID": 62,
+        "Company Name": "Shannon, Oneal and Cooley",
+        "Country ID": 5,
+        "Sector": "Finance",
+        "Q1 Earnings": 2806093,
+        "Q2 Earnings": 2624351,
+        "Q3 Earnings": 9333281,
+        "Q4 Earnings": 8535411
+    },
+    {
+        "Company ID": 63,
+        "Company Name": "Perez-Brown",
+        "Country ID": 4,
+        "Sector": "Technology",
+        "Q1 Earnings": 1184844,
+        "Q2 Earnings": 9109945,
+        "Q3 Earnings": 4201492,
+        "Q4 Earnings": 7744102
+    },
+    {
+        "Company ID": 64,
+        "Company Name": "Alvarado, Lawson and Arnold",
+        "Country ID": 9,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 1777726,
+        "Q2 Earnings": 3003575,
+        "Q3 Earnings": 4179373,
+        "Q4 Earnings": 6905601
+    },
+    {
+        "Company ID": 65,
+        "Company Name": "Phelps-Gilmore",
+        "Country ID": 7,
+        "Sector": "Healthcare",
+        "Q1 Earnings": 8112987,
+        "Q2 Earnings": 5703106,
+        "Q3 Earnings": 7332290,
+        "Q4 Earnings": 3833861
+    },
+    {
+        "Company ID": 66,
+        "Company Name": "Johnson-Huffman",
+        "Country ID": 7,
+        "Sector": "Finance",
+        "Q1 Earnings": 3255433,
+        "Q2 Earnings": 1778570,
+        "Q3 Earnings": 3638918,
+        "Q4 Earnings": 3509638
+    },
+    {
+        "Company ID": 67,
+        "Company Name": "Howard-Patterson",
+        "Country ID": 9,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 4884695,
+        "Q2 Earnings": 3919241,
+        "Q3 Earnings": 6030081,
+        "Q4 Earnings": 7270894
+    },
+    {
+        "Company ID": 68,
+        "Company Name": "Collins-Scott",
+        "Country ID": 4,
+        "Sector": "Education",
+        "Q1 Earnings": 5507062,
+        "Q2 Earnings": 4109465,
+        "Q3 Earnings": 4000386,
+        "Q4 Earnings": 3330626
+    },
+    {
+        "Company ID": 69,
+        "Company Name": "Jackson, King and Shepard",
+        "Country ID": 4,
+        "Sector": "Retail",
+        "Q1 Earnings": 9096921,
+        "Q2 Earnings": 3021726,
+        "Q3 Earnings": 5343548,
+        "Q4 Earnings": 7473405
+    },
+    {
+        "Company ID": 70,
+        "Company Name": "Ferguson, Williams and Wright",
+        "Country ID": 9,
+        "Sector": "Technology",
+        "Q1 Earnings": 6803438,
+        "Q2 Earnings": 1050961,
+        "Q3 Earnings": 3197912,
+        "Q4 Earnings": 2948515
+    },
+    {
+        "Company ID": 71,
+        "Company Name": "Smith-Frank",
+        "Country ID": 6,
+        "Sector": "Education",
+        "Q1 Earnings": 7325466,
+        "Q2 Earnings": 1598203,
+        "Q3 Earnings": 6547476,
+        "Q4 Earnings": 3133581
+    },
+    {
+        "Company ID": 72,
+        "Company Name": "Wells, Collins and Garcia",
+        "Country ID": 9,
+        "Sector": "Retail",
+        "Q1 Earnings": 5132481,
+        "Q2 Earnings": 6083898,
+        "Q3 Earnings": 1512021,
+        "Q4 Earnings": 5950081
+    },
+    {
+        "Company ID": 73,
+        "Company Name": "Zavala PLC",
+        "Country ID": 6,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 5010796,
+        "Q2 Earnings": 5162503,
+        "Q3 Earnings": 7535202,
+        "Q4 Earnings": 8053603
+    },
+    {
+        "Company ID": 74,
+        "Company Name": "Brown-Nelson",
+        "Country ID": 3,
+        "Sector": "Healthcare",
+        "Q1 Earnings": 8565594,
+        "Q2 Earnings": 6750901,
+        "Q3 Earnings": 8333607,
+        "Q4 Earnings": 5655078
+    },
+    {
+        "Company ID": 75,
+        "Company Name": "Fuller, Ibarra and Hines",
+        "Country ID": 5,
+        "Sector": "Technology",
+        "Q1 Earnings": 8565809,
+        "Q2 Earnings": 3313010,
+        "Q3 Earnings": 2464211,
+        "Q4 Earnings": 6923696
+    },
+    {
+        "Company ID": 76,
+        "Company Name": "Pollard Inc",
+        "Country ID": 10,
+        "Sector": "Finance",
+        "Q1 Earnings": 2241410,
+        "Q2 Earnings": 9466989,
+        "Q3 Earnings": 3047800,
+        "Q4 Earnings": 6614440
+    },
+    {
+        "Company ID": 77,
+        "Company Name": "Grimes-Jones",
+        "Country ID": 3,
+        "Sector": "Healthcare",
+        "Q1 Earnings": 4912041,
+        "Q2 Earnings": 7467309,
+        "Q3 Earnings": 8618276,
+        "Q4 Earnings": 2549503
+    },
+    {
+        "Company ID": 78,
+        "Company Name": "Lee-Smith",
+        "Country ID": 9,
+        "Sector": "Education",
+        "Q1 Earnings": 3304006,
+        "Q2 Earnings": 4649005,
+        "Q3 Earnings": 1995771,
+        "Q4 Earnings": 9907943
+    },
+    {
+        "Company ID": 79,
+        "Company Name": "Miller LLC",
+        "Country ID": 2,
+        "Sector": "Finance",
+        "Q1 Earnings": 7726370,
+        "Q2 Earnings": 1341829,
+        "Q3 Earnings": 7323692,
+        "Q4 Earnings": 3800930
+    },
+    {
+        "Company ID": 80,
+        "Company Name": "Richards-Bennett",
+        "Country ID": 10,
+        "Sector": "Retail",
+        "Q1 Earnings": 6714446,
+        "Q2 Earnings": 2159757,
+        "Q3 Earnings": 8583530,
+        "Q4 Earnings": 6035055
+    },
+    {
+        "Company ID": 81,
+        "Company Name": "Garcia, Stevens and Flowers",
+        "Country ID": 6,
+        "Sector": "Technology",
+        "Q1 Earnings": 8772601,
+        "Q2 Earnings": 9279040,
+        "Q3 Earnings": 6096063,
+        "Q4 Earnings": 9745882
+    },
+    {
+        "Company ID": 82,
+        "Company Name": "Murray Group",
+        "Country ID": 7,
+        "Sector": "Technology",
+        "Q1 Earnings": 6370606,
+        "Q2 Earnings": 4073063,
+        "Q3 Earnings": 8043992,
+        "Q4 Earnings": 4990043
+    },
+    {
+        "Company ID": 83,
+        "Company Name": "Barron-Flores",
+        "Country ID": 7,
+        "Sector": "Education",
+        "Q1 Earnings": 7194529,
+        "Q2 Earnings": 2924606,
+        "Q3 Earnings": 2483466,
+        "Q4 Earnings": 8685797
+    },
+    {
+        "Company ID": 84,
+        "Company Name": "Jimenez-Bowen",
+        "Country ID": 2,
+        "Sector": "Healthcare",
+        "Q1 Earnings": 6621265,
+        "Q2 Earnings": 7182056,
+        "Q3 Earnings": 9500294,
+        "Q4 Earnings": 9142820
+    },
+    {
+        "Company ID": 85,
+        "Company Name": "Robertson, Parks and Bryant",
+        "Country ID": 5,
+        "Sector": "Healthcare",
+        "Q1 Earnings": 2074988,
+        "Q2 Earnings": 7070167,
+        "Q3 Earnings": 3562690,
+        "Q4 Earnings": 2908379
+    },
+    {
+        "Company ID": 86,
+        "Company Name": "Woods, West and Snyder",
+        "Country ID": 2,
+        "Sector": "Finance",
+        "Q1 Earnings": 9709440,
+        "Q2 Earnings": 2106045,
+        "Q3 Earnings": 7353380,
+        "Q4 Earnings": 6147226
+    },
+    {
+        "Company ID": 87,
+        "Company Name": "Allen, Salazar and Cooper",
+        "Country ID": 2,
+        "Sector": "Finance",
+        "Q1 Earnings": 3859203,
+        "Q2 Earnings": 7585132,
+        "Q3 Earnings": 7490760,
+        "Q4 Earnings": 8603680
+    },
+    {
+        "Company ID": 88,
+        "Company Name": "Evans-Bernard",
+        "Country ID": 1,
+        "Sector": "Finance",
+        "Q1 Earnings": 2536155,
+        "Q2 Earnings": 8538130,
+        "Q3 Earnings": 4751243,
+        "Q4 Earnings": 3423630
+    },
+    {
+        "Company ID": 89,
+        "Company Name": "Perry, Johnson and Johnson",
+        "Country ID": 8,
+        "Sector": "Healthcare",
+        "Q1 Earnings": 5651951,
+        "Q2 Earnings": 3539400,
+        "Q3 Earnings": 3028946,
+        "Q4 Earnings": 5512693
+    },
+    {
+        "Company ID": 90,
+        "Company Name": "Erickson PLC",
+        "Country ID": 9,
+        "Sector": "Healthcare",
+        "Q1 Earnings": 2941957,
+        "Q2 Earnings": 6379310,
+        "Q3 Earnings": 1273139,
+        "Q4 Earnings": 7604994
+    },
+    {
+        "Company ID": 91,
+        "Company Name": "Love-Cox",
+        "Country ID": 6,
+        "Sector": "Retail",
+        "Q1 Earnings": 6884320,
+        "Q2 Earnings": 5951420,
+        "Q3 Earnings": 1961709,
+        "Q4 Earnings": 2907113
+    },
+    {
+        "Company ID": 92,
+        "Company Name": "Medina-Morgan",
+        "Country ID": 6,
+        "Sector": "Finance",
+        "Q1 Earnings": 9412997,
+        "Q2 Earnings": 6350463,
+        "Q3 Earnings": 1389209,
+        "Q4 Earnings": 5404084
+    },
+    {
+        "Company ID": 93,
+        "Company Name": "Allen-Gutierrez",
+        "Country ID": 6,
+        "Sector": "Education",
+        "Q1 Earnings": 4212378,
+        "Q2 Earnings": 9757972,
+        "Q3 Earnings": 3294098,
+        "Q4 Earnings": 2171762
+    },
+    {
+        "Company ID": 94,
+        "Company Name": "Brown-Lawrence",
+        "Country ID": 9,
+        "Sector": "Healthcare",
+        "Q1 Earnings": 7556220,
+        "Q2 Earnings": 9894036,
+        "Q3 Earnings": 7566812,
+        "Q4 Earnings": 7836901
+    },
+    {
+        "Company ID": 95,
+        "Company Name": "Johnson-Kerr",
+        "Country ID": 10,
+        "Sector": "Retail",
+        "Q1 Earnings": 8388084,
+        "Q2 Earnings": 3322511,
+        "Q3 Earnings": 3931112,
+        "Q4 Earnings": 9070017
+    },
+    {
+        "Company ID": 96,
+        "Company Name": "Jones-Chang",
+        "Country ID": 2,
+        "Sector": "Retail",
+        "Q1 Earnings": 1375372,
+        "Q2 Earnings": 4998710,
+        "Q3 Earnings": 9022918,
+        "Q4 Earnings": 6896497
+    },
+    {
+        "Company ID": 97,
+        "Company Name": "Evans Group",
+        "Country ID": 7,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 1987908,
+        "Q2 Earnings": 2811299,
+        "Q3 Earnings": 6372631,
+        "Q4 Earnings": 8488798
+    },
+    {
+        "Company ID": 98,
+        "Company Name": "Richardson-Coleman",
+        "Country ID": 3,
+        "Sector": "Finance",
+        "Q1 Earnings": 9227180,
+        "Q2 Earnings": 7420915,
+        "Q3 Earnings": 7715440,
+        "Q4 Earnings": 4969378
+    },
+    {
+        "Company ID": 99,
+        "Company Name": "Johnson-Cantu",
+        "Country ID": 4,
+        "Sector": "Education",
+        "Q1 Earnings": 1161461,
+        "Q2 Earnings": 4345858,
+        "Q3 Earnings": 6434088,
+        "Q4 Earnings": 2600502
+    },
+    {
+        "Company ID": 100,
+        "Company Name": "Rosales, Martinez and Allen",
+        "Country ID": 9,
+        "Sector": "Finance",
+        "Q1 Earnings": 1580680,
+        "Q2 Earnings": 2404248,
+        "Q3 Earnings": 2264286,
+        "Q4 Earnings": 4879146
+    },
+    {
+        "Company ID": 101,
+        "Company Name": "Collier, Bonilla and Martinez",
+        "Country ID": 6,
+        "Sector": "Retail",
+        "Q1 Earnings": 1495012,
+        "Q2 Earnings": 7157620,
+        "Q3 Earnings": 2290463,
+        "Q4 Earnings": 2699614
+    },
+    {
+        "Company ID": 102,
+        "Company Name": "Murphy Ltd",
+        "Country ID": 9,
+        "Sector": "Technology",
+        "Q1 Earnings": 9672113,
+        "Q2 Earnings": 5629274,
+        "Q3 Earnings": 5670461,
+        "Q4 Earnings": 3905812
+    },
+    {
+        "Company ID": 103,
+        "Company Name": "Baker Inc",
+        "Country ID": 9,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 9777555,
+        "Q2 Earnings": 8944067,
+        "Q3 Earnings": 1028123,
+        "Q4 Earnings": 9424654
+    },
+    {
+        "Company ID": 104,
+        "Company Name": "Harris, Cook and Smith",
+        "Country ID": 1,
+        "Sector": "Finance",
+        "Q1 Earnings": 8589977,
+        "Q2 Earnings": 3243888,
+        "Q3 Earnings": 4856149,
+        "Q4 Earnings": 3250138
+    },
+    {
+        "Company ID": 105,
+        "Company Name": "Sullivan Ltd",
+        "Country ID": 6,
+        "Sector": "Technology",
+        "Q1 Earnings": 4461128,
+        "Q2 Earnings": 6867833,
+        "Q3 Earnings": 3684980,
+        "Q4 Earnings": 7190993
+    },
+    {
+        "Company ID": 106,
+        "Company Name": "Anderson, Zuniga and Peters",
+        "Country ID": 3,
+        "Sector": "Finance",
+        "Q1 Earnings": 6580727,
+        "Q2 Earnings": 1406971,
+        "Q3 Earnings": 1805318,
+        "Q4 Earnings": 9762759
+    },
+    {
+        "Company ID": 107,
+        "Company Name": "Vega Group",
+        "Country ID": 3,
+        "Sector": "Healthcare",
+        "Q1 Earnings": 1853932,
+        "Q2 Earnings": 3550307,
+        "Q3 Earnings": 5646764,
+        "Q4 Earnings": 1688206
+    },
+    {
+        "Company ID": 108,
+        "Company Name": "Gonzales-Lee",
+        "Country ID": 3,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 7585038,
+        "Q2 Earnings": 4475561,
+        "Q3 Earnings": 4395292,
+        "Q4 Earnings": 8999928
+    },
+    {
+        "Company ID": 109,
+        "Company Name": "Herman and Sons",
+        "Country ID": 1,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 1990100,
+        "Q2 Earnings": 9826968,
+        "Q3 Earnings": 9668000,
+        "Q4 Earnings": 1283270
+    },
+    {
+        "Company ID": 110,
+        "Company Name": "Cooley PLC",
+        "Country ID": 5,
+        "Sector": "Healthcare",
+        "Q1 Earnings": 9869883,
+        "Q2 Earnings": 5310188,
+        "Q3 Earnings": 3932365,
+        "Q4 Earnings": 6447221
+    },
+    {
+        "Company ID": 111,
+        "Company Name": "Fuller Inc",
+        "Country ID": 2,
+        "Sector": "Retail",
+        "Q1 Earnings": 8916013,
+        "Q2 Earnings": 6384181,
+        "Q3 Earnings": 6966052,
+        "Q4 Earnings": 8473583
+    },
+    {
+        "Company ID": 112,
+        "Company Name": "Allen-Mcdowell",
+        "Country ID": 6,
+        "Sector": "Technology",
+        "Q1 Earnings": 7802508,
+        "Q2 Earnings": 8579050,
+        "Q3 Earnings": 4878381,
+        "Q4 Earnings": 6827653
+    },
+    {
+        "Company ID": 113,
+        "Company Name": "Keith-Blackburn",
+        "Country ID": 10,
+        "Sector": "Retail",
+        "Q1 Earnings": 3184981,
+        "Q2 Earnings": 3192681,
+        "Q3 Earnings": 3536400,
+        "Q4 Earnings": 3830579
+    },
+    {
+        "Company ID": 114,
+        "Company Name": "Malone, Charles and Wilson",
+        "Country ID": 8,
+        "Sector": "Finance",
+        "Q1 Earnings": 8791162,
+        "Q2 Earnings": 2265560,
+        "Q3 Earnings": 6004539,
+        "Q4 Earnings": 2774987
+    },
+    {
+        "Company ID": 115,
+        "Company Name": "Powers LLC",
+        "Country ID": 9,
+        "Sector": "Healthcare",
+        "Q1 Earnings": 3515506,
+        "Q2 Earnings": 6624837,
+        "Q3 Earnings": 4091969,
+        "Q4 Earnings": 3662207
+    },
+    {
+        "Company ID": 116,
+        "Company Name": "Moore and Sons",
+        "Country ID": 3,
+        "Sector": "Technology",
+        "Q1 Earnings": 2297525,
+        "Q2 Earnings": 8586451,
+        "Q3 Earnings": 9471659,
+        "Q4 Earnings": 2985203
+    },
+    {
+        "Company ID": 117,
+        "Company Name": "Cox, Atkins and Perez",
+        "Country ID": 7,
+        "Sector": "Finance",
+        "Q1 Earnings": 4943659,
+        "Q2 Earnings": 9818949,
+        "Q3 Earnings": 6377753,
+        "Q4 Earnings": 3869588
+    },
+    {
+        "Company ID": 118,
+        "Company Name": "Bell, Williamson and Daniels",
+        "Country ID": 7,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 1615608,
+        "Q2 Earnings": 1046107,
+        "Q3 Earnings": 9238798,
+        "Q4 Earnings": 9408261
+    },
+    {
+        "Company ID": 119,
+        "Company Name": "Cook-Pierce",
+        "Country ID": 1,
+        "Sector": "Technology",
+        "Q1 Earnings": 5322131,
+        "Q2 Earnings": 9597291,
+        "Q3 Earnings": 3336340,
+        "Q4 Earnings": 6445158
+    },
+    {
+        "Company ID": 120,
+        "Company Name": "Warren, Edwards and Fischer",
+        "Country ID": 8,
+        "Sector": "Education",
+        "Q1 Earnings": 9620648,
+        "Q2 Earnings": 3555747,
+        "Q3 Earnings": 5058735,
+        "Q4 Earnings": 9402586
+    },
+    {
+        "Company ID": 121,
+        "Company Name": "Curry, Smith and Greene",
+        "Country ID": 2,
+        "Sector": "Finance",
+        "Q1 Earnings": 1824438,
+        "Q2 Earnings": 1360414,
+        "Q3 Earnings": 1758341,
+        "Q4 Earnings": 9444678
+    },
+    {
+        "Company ID": 122,
+        "Company Name": "Johnson-Hanson",
+        "Country ID": 10,
+        "Sector": "Technology",
+        "Q1 Earnings": 2979255,
+        "Q2 Earnings": 7148537,
+        "Q3 Earnings": 7788547,
+        "Q4 Earnings": 2205072
+    },
+    {
+        "Company ID": 123,
+        "Company Name": "Davila-Ward",
+        "Country ID": 2,
+        "Sector": "Education",
+        "Q1 Earnings": 5685535,
+        "Q2 Earnings": 9123815,
+        "Q3 Earnings": 6051724,
+        "Q4 Earnings": 3622385
+    },
+    {
+        "Company ID": 124,
+        "Company Name": "Franco, Lowe and Green",
+        "Country ID": 8,
+        "Sector": "Healthcare",
+        "Q1 Earnings": 1478864,
+        "Q2 Earnings": 6710137,
+        "Q3 Earnings": 1607228,
+        "Q4 Earnings": 8614591
+    },
+    {
+        "Company ID": 125,
+        "Company Name": "Morrison-Johnson",
+        "Country ID": 3,
+        "Sector": "Retail",
+        "Q1 Earnings": 1363936,
+        "Q2 Earnings": 2552011,
+        "Q3 Earnings": 8948043,
+        "Q4 Earnings": 4461605
+    },
+    {
+        "Company ID": 126,
+        "Company Name": "Davis PLC",
+        "Country ID": 6,
+        "Sector": "Technology",
+        "Q1 Earnings": 1841676,
+        "Q2 Earnings": 9554495,
+        "Q3 Earnings": 6952946,
+        "Q4 Earnings": 2090993
+    },
+    {
+        "Company ID": 127,
+        "Company Name": "Davis-Watson",
+        "Country ID": 8,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 5052632,
+        "Q2 Earnings": 5765351,
+        "Q3 Earnings": 9398753,
+        "Q4 Earnings": 5706164
+    },
+    {
+        "Company ID": 128,
+        "Company Name": "Gibbs, Evans and Mcclain",
+        "Country ID": 2,
+        "Sector": "Healthcare",
+        "Q1 Earnings": 7407785,
+        "Q2 Earnings": 2597122,
+        "Q3 Earnings": 1730375,
+        "Q4 Earnings": 1013869
+    },
+    {
+        "Company ID": 129,
+        "Company Name": "Goodman-Johnson",
+        "Country ID": 3,
+        "Sector": "Healthcare",
+        "Q1 Earnings": 9376203,
+        "Q2 Earnings": 7544859,
+        "Q3 Earnings": 2892860,
+        "Q4 Earnings": 4705518
+    },
+    {
+        "Company ID": 130,
+        "Company Name": "Williams-Williams",
+        "Country ID": 10,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 8794244,
+        "Q2 Earnings": 6793669,
+        "Q3 Earnings": 7149078,
+        "Q4 Earnings": 6979893
+    },
+    {
+        "Company ID": 131,
+        "Company Name": "Stevenson and Sons",
+        "Country ID": 8,
+        "Sector": "Retail",
+        "Q1 Earnings": 5866697,
+        "Q2 Earnings": 7301138,
+        "Q3 Earnings": 3631153,
+        "Q4 Earnings": 6453602
+    },
+    {
+        "Company ID": 132,
+        "Company Name": "Cook LLC",
+        "Country ID": 3,
+        "Sector": "Technology",
+        "Q1 Earnings": 6150052,
+        "Q2 Earnings": 5860512,
+        "Q3 Earnings": 3826440,
+        "Q4 Earnings": 4510431
+    },
+    {
+        "Company ID": 133,
+        "Company Name": "Frank Inc",
+        "Country ID": 6,
+        "Sector": "Education",
+        "Q1 Earnings": 9509664,
+        "Q2 Earnings": 7446703,
+        "Q3 Earnings": 3710425,
+        "Q4 Earnings": 7692753
+    },
+    {
+        "Company ID": 134,
+        "Company Name": "Hunt, Reyes and Valentine",
+        "Country ID": 10,
+        "Sector": "Finance",
+        "Q1 Earnings": 8960577,
+        "Q2 Earnings": 7039661,
+        "Q3 Earnings": 9732122,
+        "Q4 Earnings": 3418590
+    },
+    {
+        "Company ID": 135,
+        "Company Name": "Nunez, Gregory and Mcdonald",
+        "Country ID": 3,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 9829336,
+        "Q2 Earnings": 4004407,
+        "Q3 Earnings": 6170320,
+        "Q4 Earnings": 5358526
+    },
+    {
+        "Company ID": 136,
+        "Company Name": "Vance, Wilson and Nichols",
+        "Country ID": 7,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 6194199,
+        "Q2 Earnings": 3167980,
+        "Q3 Earnings": 7718382,
+        "Q4 Earnings": 3269923
+    },
+    {
+        "Company ID": 137,
+        "Company Name": "Oconnell-Stewart",
+        "Country ID": 1,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 1292615,
+        "Q2 Earnings": 3187092,
+        "Q3 Earnings": 7115051,
+        "Q4 Earnings": 6063411
+    },
+    {
+        "Company ID": 138,
+        "Company Name": "Walsh, Robles and Reese",
+        "Country ID": 1,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 8579888,
+        "Q2 Earnings": 5721329,
+        "Q3 Earnings": 3384362,
+        "Q4 Earnings": 8987746
+    },
+    {
+        "Company ID": 139,
+        "Company Name": "Andrews Group",
+        "Country ID": 8,
+        "Sector": "Education",
+        "Q1 Earnings": 2611875,
+        "Q2 Earnings": 7701401,
+        "Q3 Earnings": 6437232,
+        "Q4 Earnings": 2408591
+    },
+    {
+        "Company ID": 140,
+        "Company Name": "Mckinney Group",
+        "Country ID": 1,
+        "Sector": "Education",
+        "Q1 Earnings": 5201282,
+        "Q2 Earnings": 7372887,
+        "Q3 Earnings": 2835183,
+        "Q4 Earnings": 8939926
+    },
+    {
+        "Company ID": 141,
+        "Company Name": "Charles-Murray",
+        "Country ID": 5,
+        "Sector": "Education",
+        "Q1 Earnings": 2547919,
+        "Q2 Earnings": 7182660,
+        "Q3 Earnings": 4911390,
+        "Q4 Earnings": 4601130
+    },
+    {
+        "Company ID": 142,
+        "Company Name": "Fischer-Scott",
+        "Country ID": 3,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 2645532,
+        "Q2 Earnings": 7656304,
+        "Q3 Earnings": 4322335,
+        "Q4 Earnings": 7193690
+    },
+    {
+        "Company ID": 143,
+        "Company Name": "Simmons-Boyd",
+        "Country ID": 3,
+        "Sector": "Retail",
+        "Q1 Earnings": 1417566,
+        "Q2 Earnings": 3048187,
+        "Q3 Earnings": 3498507,
+        "Q4 Earnings": 9877232
+    },
+    {
+        "Company ID": 144,
+        "Company Name": "Jenkins-Gonzales",
+        "Country ID": 10,
+        "Sector": "Technology",
+        "Q1 Earnings": 7749389,
+        "Q2 Earnings": 2871293,
+        "Q3 Earnings": 8102058,
+        "Q4 Earnings": 1595351
+    },
+    {
+        "Company ID": 145,
+        "Company Name": "Parker, Robinson and Torres",
+        "Country ID": 8,
+        "Sector": "Retail",
+        "Q1 Earnings": 3103098,
+        "Q2 Earnings": 9534991,
+        "Q3 Earnings": 5676441,
+        "Q4 Earnings": 4306788
+    },
+    {
+        "Company ID": 146,
+        "Company Name": "Wagner-Salazar",
+        "Country ID": 9,
+        "Sector": "Finance",
+        "Q1 Earnings": 1764468,
+        "Q2 Earnings": 7617651,
+        "Q3 Earnings": 5770865,
+        "Q4 Earnings": 2090613
+    },
+    {
+        "Company ID": 147,
+        "Company Name": "Davis LLC",
+        "Country ID": 7,
+        "Sector": "Retail",
+        "Q1 Earnings": 1049777,
+        "Q2 Earnings": 7480902,
+        "Q3 Earnings": 1653169,
+        "Q4 Earnings": 6137707
+    },
+    {
+        "Company ID": 148,
+        "Company Name": "Taylor, Hamilton and Pineda",
+        "Country ID": 5,
+        "Sector": "Technology",
+        "Q1 Earnings": 7765193,
+        "Q2 Earnings": 3361421,
+        "Q3 Earnings": 5923513,
+        "Q4 Earnings": 4416292
+    },
+    {
+        "Company ID": 149,
+        "Company Name": "Smith LLC",
+        "Country ID": 6,
+        "Sector": "Manufacturing",
+        "Q1 Earnings": 7634677,
+        "Q2 Earnings": 7060604,
+        "Q3 Earnings": 6760558,
+        "Q4 Earnings": 9084284
+    },
+    {
+        "Company ID": 150,
+        "Company Name": "Nelson, Lewis and Williams",
+        "Country ID": 5,
+        "Sector": "Finance",
+        "Q1 Earnings": 4355208,
+        "Q2 Earnings": 8347470,
+        "Q3 Earnings": 3863428,
+        "Q4 Earnings": 4735467
+    }
+]

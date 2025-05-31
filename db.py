@@ -16,36 +16,54 @@ DB_CONFIG = {
 # added index to yearly_earnings bc i will query it a lot (this will increase SELECT speed but will decrease insert, update, delete speeds by creating a sorted tree based on yearly_earnings)
 migrate_up= [
     """CREATE TABLE IF NOT EXISTS countries (
-    id INT UNIQUE PRIMARY KEY,
-    name VARCHAR(72),
-    population INT CHECK (population>0),
-    q1_gdp DECIMAL CHECK (q1_gdp>=0),
-    q2_gdp DECIMAL CHECK (q2_gdp>=0),
-    q3_gdp DECIMAL CHECK (q3_gdp>=0),
-    q4_gdp DECIMAL CHECK (q4_gdp>=0),
-    yearly_gdp DECIMAL CHECK (yearly_gdp>=0)
+    id INT PRIMARY KEY,
+    name VARCHAR(32) NOT NULL,
+    region VARCHAR(32) NOT NULL,
+    yearly_gdp DECIMAL CHECK (yearly_gdp>=0),
+    population INT CHECK (population>=0)
     );""",
 
     """CREATE TABLE IF NOT EXISTS companies (
     id INT PRIMARY KEY,
-    name VARCHAR,
-    employee_count INT CHECK (employee_count>0),
+    name VARCHAR(72) NOT NULL,
+    country_id INT NOT NULL,
+    sector VARCHAR(32) NOT NULL,
     q1_earnings DECIMAL CHECK (q1_earnings>=0),
     q2_earnings DECIMAL CHECK (q2_earnings>=0),
     q3_earnings DECIMAL CHECK (q3_earnings>=0),
     q4_earnings DECIMAL CHECK (q4_earnings>=0),
     yearly_earnings DECIMAL CHECK (yearly_earnings>=0),
-    country_id INT
+    employee_count INT CHECK (employee_count>=0),
+    employee_payroll DECIMAL CHECK (employee_payroll>=0)
+    );""",
+
+    """CREATE TABLE IF NOT EXISTS employees (
+    id_number VARCHAR(32) PRIMARY KEY,
+    ssn VARCHAR(32) NOT NULL,
+    first_name VARCHAR(32) NOT NULL,
+    last_name VARCHAR(32) NOT NULL,
+    date_of_birth DATE NOT NULL,
+    company_id INT,
+    email VARCHAR NOT NULL,
+    phone_no BIGINT CHECK (phone_no>0),
+    salary DECIMAL CHECK (salary>=0),
+    nationality INT NOT NULL,
+    sector VARCHAR(32) NOT NULL
     );""",
 
     """ALTER TABLE companies ADD FOREIGN KEY (country_id) REFERENCES countries (id);
-    """
+    """,
+    """ALTER TABLE employees ADD FOREIGN KEY (nationality) REFERENCES countries (id);
+    """,
+    """ALTER TABLE employees ADD FOREIGN KEY (company_id) REFERENCES companies (id);
+    """,
 
     """CREATE INDEX IF NOT EXISTS y_earnings ON companies(yearly_earnings);
     """
 ]
 
 migrate_down = [
+    """DROP TABLE IF EXISTS employees;""",
     """DROP TABLE IF EXISTS companies;""",
     """DROP TABLE IF EXISTS countries;"""
 ]
@@ -86,12 +104,9 @@ def InsertToCountries(records):
     query = """INSERT INTO countries (
     id,
     name,
-    population,
-    q1_gdp,
-    q2_gdp,
-    q3_gdp,
-    q4_gdp,
-    yearly_gdp
+    region,
+    yearly_gdp,
+    population
     ) values %s"""
     execute_values(cursor, query, records)
 
@@ -101,12 +116,32 @@ def InsertToCompanies(records):
     query = """INSERT INTO companies (
     id,
     name,
-    employee_count,
+    country_id,
+    sector,
     q1_earnings,
     q2_earnings,
     q3_earnings,
     q4_earnings,
     yearly_earnings,
-    country_id
+    employee_count,
+    employee_payroll
+    ) values %s"""
+    execute_values(cursor, query, records)
+
+# function to insert data into employees table (accepts list of tuples)
+def InsertToEmployees(records):
+    cursor = db.cursor()
+    query = """INSERT INTO employees (
+    id_number,
+    ssn,
+    first_name,
+    last_name,
+    date_of_birth,
+    company_id,
+    email,
+    phone_no,
+    salary,
+    nationality,
+    sector
     ) values %s"""
     execute_values(cursor, query, records)

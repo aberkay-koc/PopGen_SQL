@@ -1,49 +1,41 @@
-from db import InitializeDB, RevertDB, SelectTables, CloseConn, InsertToCompanies, InsertToCountries
+from db import InitializeDB, RevertDB, SelectTables, CloseConn, InsertToCompanies, InsertToCountries, InsertToEmployees
 import pandas as pd
+import numpy as np
 
 RevertDB()
 InitializeDB()
 
+
 # DATA MANIPULATION:
+
 df_countries = pd.read_json("countries.json")
-df_country1 = pd.read_json("country_1.json")
-df_country2 = pd.read_json("country_2.json")
-df_country3 = pd.read_json("country_3.json")
+df_companies = pd.read_json("companies.json")
+df_employees = pd.read_json("employees.json")
 
-# Add country_id and calculate yearly earnings
-dfs = [df_country1, df_country2, df_country3]
-for i, df in enumerate(dfs, start= 1):
-    df["country_id"] = i
-    df["yearly_earnings"] = df[["q1_earnings", "q2_earnings", "q3_earnings", "q4_earnings"]].sum(axis=1)
+# adding yearly profit column to companies
+df_companies["Yearly Earnings"] = df_companies[["Q1 Earnings", "Q2 Earnings", "Q3 Earnings", "Q4 Earnings"]].sum(axis=1)
 
-#combining countries
-df_countries_combined = pd.concat(dfs, ignore_index=True)
-df_countries_combined["id"] = range(1, 31)
+# adding GDP column to countries (GDP taken as aggregated yearly earnings of companies)
+df_countries["GDP"] = df_countries["Country ID"].map(df_companies.groupby("Country ID")["Yearly Earnings"].sum()).fillna(0)
 
-# Fill df_countries with aggregated earnings
-for i in range(3):
-    country_id = i + 1
-    df_countries.iloc[i, 3] = df_countries_combined[df_countries_combined["country_id"] == country_id]["q1_earnings"].sum()
-    df_countries.iloc[i, 4] = df_countries_combined[df_countries_combined["country_id"] == country_id]["q2_earnings"].sum()
-    df_countries.iloc[i, 5] = df_countries_combined[df_countries_combined["country_id"] == country_id]["q3_earnings"].sum()
-    df_countries.iloc[i, 6] = df_countries_combined[df_countries_combined["country_id"] == country_id]["q4_earnings"].sum()
-    df_countries.iloc[i, 7] = df_countries_combined[df_countries_combined["country_id"] == country_id]["yearly_earnings"].sum()
+# adding population to countries
+population_per_country = df_employees["Nationality"].value_counts()
+df_countries["Population"] = df_countries["Country ID"].map(population_per_country).fillna(0).astype(int)
 
-# Rename countries
-df_countries.loc[df_countries["id"] == 1, "country_name"] = "Country A"
-df_countries.loc[df_countries["id"] == 2, "country_name"] = "Country B"
-df_countries.loc[df_countries["id"] == 3, "country_name"] = "Country C"
+# adding employee count and employee payroll to companies
+df_companies["Employee Count"] = df_companies["Company ID"].map(df_employees["Company ID"].value_counts()).fillna(0).astype(int)
+df_companies["Employee Payroll"] = df_companies["Company ID"].map(df_employees.groupby("Company ID")["Salary"].sum()).fillna(0)
 
-print(df_countries.head())
-print(df_countries_combined.head())
-
-
-
+# changing nan values assigned by pandas to None for SQL integration (pyscopg2 recognizes None)
+df_employees = df_employees.fillna(np.nan).replace([np.nan], [None])
 
 countries_records = list(df_countries.itertuples(index=False, name=None))
 InsertToCountries(countries_records)
 
-companies_records = list(df_countries_combined.itertuples(index=False, name=None))
+companies_records = list(df_companies.itertuples(index=False, name=None))
 InsertToCompanies(companies_records)
+
+employees_records = list(df_employees.itertuples(index=False, name=None))
+InsertToEmployees(employees_records)
 
 CloseConn()
