@@ -67,7 +67,7 @@ All requirements are in requirement.txt
   python main.py
   ```
 
-  This will execute the primary logic defined in `main.py`, which includes data manipulation, and insertion to PostgreSQL using functions in db.py.
+  This will execute the primary logic defined in `main.py`, which includes data manipulation, and insertion to PostgreSQL using functions in `db.py`.
 
 ## Project Structure
 
