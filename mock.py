@@ -57,7 +57,6 @@ def GenerateEmployees(company_num, country_num):
                 "Phone": fake.msisdn(),
                 "Salary": random.randint(30000, 150000),
                 "Nationality": fake.pyint(min_value=1, max_value=country_num),
-                "Sector": random.choice(sectors)
             }
             employee_data.append(row)
         else:
@@ -72,7 +71,6 @@ def GenerateEmployees(company_num, country_num):
                 "Phone": fake.msisdn(),
                 "Salary": 0,
                 "Nationality": fake.pyint(min_value=1, max_value=country_num),
-                "Sector": random.choice(sectors)
             }
             employee_data.append(row)
     return employee_data

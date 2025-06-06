@@ -1,7 +1,62 @@
 
+This projects generates mock data and after some data manipulation using Python, inserts it into PostgreSQL database. I developed it to practice SQL queries. The sample SQL queries are listed below with my answers.
+
+## Sample SQL Queries:
+
+14. Which country has the highest earnings per capita (total company earnings ÷ population)?
+```sql
+SELECT c.name, (total_earnings/population) AS earnings_per_capita
+FROM countries AS c
+JOIN (SELECT country_id, SUM(yearly_earnings) AS total_earnings
+	  FROM companies AS cm
+	  GROUP BY country_id) AS y
+ON c.id = y.country_id 
+ORDER BY earnings_per_capita DESC
+LIMIT 1;
+```
+
+15. Calculate the employee payroll as a percentage of yearly earnings for each company. Flag companies where it's more than 70%.
+```sql
+SELECT name, (total_payroll/yearly_earnings * 100) AS payroll_percentage
+FROM companies AS cm 
+JOIN (SELECT company_id, SUM(salary) AS total_payroll
+	  FROM employees
+	  GROUP BY company_id 
+	  ) AS p ON cm.id = p.company_id
+WHERE yearly_earnings > 0
+ AND (total_payroll/yearly_earnings * 100) > 70;
+```
+
+16. Find the average salary of employees per sector.
+```sql
+SELECT cm.sector, ROUND(AVG(salary))
+FROM companies AS cm
+JOIN employees AS e ON cm.id = e.company_id
+GROUP BY cm.sector;
+```
+
+17. Get the names of top 10 companies by employee count.
+```sql
+SELECT cm.name, COUNT(e.id_number) AS employee_count
+FROM companies AS cm
+JOIN employees AS e ON e.company_id = cm.id
+GROUP BY cm.id, cm.name
+ORDER BY employee_count DESC
+LIMIT 10;
+```
+
+18. How many companies are there in each country?
+```sql
+SELECT c.name  AS country_name, COUNT(cm.id) AS company_count
+FROM countries AS c
+JOIN companies AS cm ON cm.country_id = c.id
+GROUP BY c.id, c.name
+ORDER BY country_name;
+```
+
 # Countries & Companies
 
-This project is a Python-based application that manages and analyzes data related to countries, companies, and employees. It utilizes JSON files for data storage and provides functionalities to interact with and process this data.
+This project is a Python-based application that generates, manages and analyzes data related to countries, companies, and employees. It utilizes JSON files for data storage and provides functionalities to interact with and process this data. Purpose of this project was to create data, insert it into SQL database and use this database to practice SQL queries. 
 
 ## Features
 

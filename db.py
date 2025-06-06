@@ -47,8 +47,7 @@ migrate_up= [
     email VARCHAR NOT NULL,
     phone_no BIGINT CHECK (phone_no>0),
     salary DECIMAL CHECK (salary>=0),
-    nationality INT NOT NULL,
-    sector VARCHAR(32) NOT NULL
+    nationality INT NOT NULL
     );""",
 
     """ALTER TABLE companies ADD FOREIGN KEY (country_id) REFERENCES countries (id);
@@ -141,7 +140,6 @@ def InsertToEmployees(records):
     email,
     phone_no,
     salary,
-    nationality,
-    sector
+    nationality
     ) values %s"""
     execute_values(cursor, query, records)
