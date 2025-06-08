@@ -41,7 +41,7 @@ WITH earnings_per_emp AS (
     SELECT 
         cm.id,
         cm.name AS company_name,
-        ROUND(cm.yearly_earnings / COUNT(e.id_number), 2) AS earnings_per_employee
+        ROUND(cm.yearly_earnings / COUNT(e.id_number)) AS earnings_per_employee
     FROM companies AS cm
     JOIN employees AS e ON cm.id = e.company_id
     GROUP BY cm.id, cm.name, cm.yearly_earnings
@@ -97,6 +97,22 @@ FROM weighted
 ORDER BY composite_score ASC
 LIMIT 10;
 ```
+### Resulting Table:
+|company_name|earnings_per_employee|overhead_percentage|earnings_score|overhead_score                |composite_score|
+|------------|---------------------|-------------------|--------------|------------------------------|---------------|
+|Smith, Hall and Stewart|112503               |84.11              |0.700         |0.700                         |0.700          |
+|Briggs Group|124192               |75.91              |1.300         |1.300                         |1.300          |
+|Walsh Group |151461               |61.45              |2.000         |2.000                         |2.000          |
+|Bailey, Buckley and Shepard|172532               |50.77              |2.700         |4.700                         |3.300          |
+|Doyle-Jackson|175156               |52.92              |3.300         |3.300                         |3.300          |
+|Goodman and Sons|180671               |53.22              |4.700         |2.700                         |4.100          |
+|Reed-Flores |177474               |49.19              |4.000         |6.700                         |4.810          |
+|Richards-Morrow|183911               |51.83              |6.000         |4.000                         |5.400          |
+|White and Sons|181642               |50.33              |5.300         |6.000                         |5.510          |
+|Sullivan, Taylor and Williams|189819               |50.44              |6.700         |5.300                         |6.280          |
+
+
+
 2. The HR team of Adams Inc wants to ensure fair pay. Find the 10 highest-paid employees and check whether their salaries are significantly higher than the average salary in their sector.
 ```sql
 SELECT 
@@ -113,6 +129,7 @@ WHERE cm.name = 'Adams Inc'
 ORDER BY e.salary DESC
 LIMIT 10;
 ```
+
 
 3. A policymaker wants to understand how company performance relates to national GDP. Show a comparison between average company earnings and country GDP by region.
 ```sql
@@ -133,6 +150,8 @@ ORDER BY c.region;
 |South America|21182589         |370353825      |
 
 Even though Europe, with its higher average GDP, also shows slightly higher company earnings pointing to a positive correlation between the two variables, the trend does not hold consistently leading to the conclusion that corporate earnings are not strictly proportional to GDP. While the Pearson R value comes out as 0.82 which would mean a strong positive correlation, the associated p-value comes out as 0.393 which tells that the correlation is not statistically significant. Most likely caused by the limited number of data points for region, 3, which reduces confidence in the robustness of the correlation.
+
+
 
 4. Identify all combinations of employees of natinality "Country A" and companies, even if the employee isn’t currently assigned to any company(unemployed).
 ```sql
@@ -159,6 +178,7 @@ WHERE c.id = 1;
 .
 .
 
+
 5. Which companies saw a significant drop in earnings in Q4 compared to Q3 (e.g., >30%)?
 ```sql
 SELECT
@@ -173,6 +193,7 @@ WHERE
 ORDER BY percentage_drop DESC;
 ```
 
+
 6. Identify employees who work in a company from a different country than their nationality.
 ```sql 
 SELECT 
@@ -184,6 +205,7 @@ FROM employees AS e
 JOIN companies AS cm ON cm.id = e.company_id
 WHERE cm.country_id <> e.nationality;
 ```
+
 
 7. What is the average and median employee salaries in each region?
 ```sql
@@ -198,6 +220,7 @@ WHERE salary IS NOT NULL
 GROUP BY region;
 ```
 
+
 8. Which country has the highest earnings per capita (total company earnings ÷ population)?
 ```sql
 SELECT c.name, (total_earnings/population) AS earnings_per_capita
@@ -209,6 +232,7 @@ ON c.id = y.country_id
 ORDER BY earnings_per_capita DESC
 LIMIT 1;
 ```
+
 
 9. Calculate the employee payroll as a percentage of yearly earnings for each company. Flag companies where it's more than 70%.
 ```sql
@@ -222,6 +246,7 @@ WHERE yearly_earnings > 0
  AND (total_payroll/yearly_earnings * 100) > 70;
 ```
 
+
 10. Find the average salary of employees per sector.
 ```sql
 SELECT cm.sector, ROUND(AVG(salary))
@@ -229,6 +254,7 @@ FROM companies AS cm
 JOIN employees AS e ON cm.id = e.company_id
 GROUP BY cm.sector;
 ```
+
 
 11. Get the names of top 10 companies by employee count.
 ```sql
@@ -239,6 +265,7 @@ GROUP BY cm.id, cm.name
 ORDER BY employee_count DESC
 LIMIT 10;
 ```
+
 
 12. How many companies are there in each country?
 ```sql
