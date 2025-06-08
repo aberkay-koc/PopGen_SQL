@@ -3,7 +3,202 @@ This projects generates mock data and after some data manipulation using Python,
 
 ## Sample SQL Queries:
 
-14. Which country has the highest earnings per capita (total company earnings ÷ population)?
+1. You’ve been asked to identify underperforming companies. Define a metric/metrics for it and list the bottom 10 companies based on it.
+Earnings per employee
+```sql
+SELECT 
+	cm.name AS company_name,
+	ROUND((cm.yearly_earnings / COUNT(*)),2) AS earnings_per_emp
+FROM employees AS e
+JOIN companies AS cm ON cm.id = e.company_id
+GROUP BY cm.id, cm.name, cm.yearly_earnings
+HAVING COUNT(*) > 0
+ORDER BY earnings_per_emp
+LIMIT 10;
+```
+
+Overhead Percentage - Are payroll costs bloated vs. earnings?
+```sql
+SELECT
+    cm.name AS company_name,
+    ROUND((ts.total_salary / cm.yearly_earnings) * 100, 2) AS overhead_pct
+FROM companies AS cm
+JOIN (
+    SELECT 
+        company_id, 
+        SUM(salary) AS total_salary
+    FROM employees
+    GROUP BY company_id
+) AS ts ON cm.id = ts.company_id
+WHERE cm.yearly_earnings > 0
+ORDER BY overhead_pct DESC
+LIMIT 10;
+```
+Rank based composite score: (This query creates an overall ranking of companies based on; low productivity, high payroll burden)
+I combined the two metrics with 0.7(earnings_per_emp) and 0.3(overhead_pct) weights.
+```sql
+WITH earnings_per_emp AS (
+    SELECT 
+        cm.id,
+        cm.name AS company_name,
+        ROUND(cm.yearly_earnings / COUNT(e.id_number), 2) AS earnings_per_employee
+    FROM companies AS cm
+    JOIN employees AS e ON cm.id = e.company_id
+    GROUP BY cm.id, cm.name, cm.yearly_earnings
+),
+
+overhead_pct AS (
+    SELECT 
+        cm.id,
+        ROUND(SUM(e.salary) / cm.yearly_earnings * 100, 2) AS overhead_percentage
+    FROM companies AS cm
+    JOIN employees AS e ON cm.id = e.company_id
+    WHERE cm.yearly_earnings > 0
+    GROUP BY cm.id, cm.yearly_earnings
+),
+
+ranked AS (
+    SELECT 
+        epe.company_name,
+        epe.earnings_per_employee,
+        op.overhead_percentage,
+        RANK() OVER (ORDER BY epe.earnings_per_employee ASC) AS earnings_rank,
+        RANK() OVER (ORDER BY op.overhead_percentage DESC) AS overhead_rank
+    FROM earnings_per_emp AS epe
+    JOIN overhead_pct AS op ON epe.id = op.id
+),
+
+rank_limits AS (
+    SELECT 
+        MAX(earnings_rank) AS max_earnings_rank,
+        MAX(overhead_rank) AS max_overhead_rank
+    FROM ranked
+),
+
+weighted AS (
+    SELECT 
+        r.company_name,
+        r.earnings_per_employee,
+        r.overhead_percentage,
+        ROUND(r.earnings_rank * 1.0 / rl.max_earnings_rank, 3)*100 AS earnings_score,
+        ROUND(r.overhead_rank * 1.0 / rl.max_overhead_rank, 3)*100 AS overhead_score
+    FROM ranked r
+    CROSS JOIN rank_limits rl
+)
+
+SELECT 
+    company_name,
+    earnings_per_employee,
+    overhead_percentage,
+    earnings_score,
+    overhead_score,
+    ROUND((earnings_score * 0.7 + overhead_score * 0.3), 3) AS composite_score
+FROM weighted
+ORDER BY composite_score ASC
+LIMIT 10;
+```
+2. The HR team of Adams Inc wants to ensure fair pay. Find the 10 highest-paid employees and check whether their salaries are significantly higher than the average salary in their sector.
+```sql
+SELECT 
+    e.id_number,
+    e.first_name,
+    e.last_name,
+    e.salary,
+    cm.sector,
+    AVG(e.salary) OVER (PARTITION BY cm.sector) AS avg_sector_salary,
+    ROUND((e.salary / AVG(e.salary) OVER (PARTITION BY cm.sector)) * 100, 2) AS percent_of_avg
+FROM employees e
+JOIN companies cm ON e.company_id = cm.id
+WHERE cm.name = 'Adams Inc'
+ORDER BY e.salary DESC
+LIMIT 10;
+```
+
+3. A policymaker wants to understand how company performance relates to national GDP. Show a comparison between average company earnings and country GDP by region.
+```sql
+SELECT
+	c.region,
+	ROUND(AVG(cm.yearly_earnings)) AS avg_comp_earnings,
+	ROUND(AVG(c.yearly_gdp)) AS avg_country_gdp
+FROM countries c
+JOIN companies cm ON c.id = cm.country_id
+GROUP BY c.region
+ORDER BY c.region;
+```
+### Resulting Table:
+|region       |avg_comp_earnings|avg_country_gdp|
+|-------------|-----------------|---------------|
+|Europe       |22617182         |464033024      |
+|North America|21324279         |275484717      |
+|South America|21182589         |370353825      |
+
+Even though Europe, with its higher average GDP, also shows slightly higher company earnings pointing to a positive correlation between the two variables, the trend does not hold consistently leading to the conclusion that corporate earnings are not strictly proportional to GDP. While the Pearson R value comes out as 0.82 which would mean a strong positive correlation, the associated p-value comes out as 0.393 which tells that the correlation is not statistically significant. Most likely caused by the limited number of data points for region, 3, which reduces confidence in the robustness of the correlation.
+
+4. Identify all combinations of employees of natinality "Country A" and companies, even if the employee isn’t currently assigned to any company(unemployed).
+```sql
+SELECT
+	e.id_number,
+	e.first_name,
+	e.last_name,
+	c.name AS nationality,
+	cm.name AS company_name
+FROM employees e
+JOIN countries c ON c.id = e.nationality
+LEFT JOIN companies cm ON cm.id = e.company_id
+WHERE c.id = 1;
+```
+### Resulting Table:
+|id_number  |first_name|last_name|nationality|company_name                  |
+|-----------|----------|---------|-----------|------------------------------|
+|36299713522|Molly     |Wells    |Country A  |Wilson, Dillon and Bolton     |
+|22325518695|Kevin     |Marshall |Country A  |Lynch, Jenkins and Blankenship|
+|23514958908|Alicia    |Hays     |Country A  |NULL                          |
+|13727538969|William   |Contreras|Country A  |Smith LLC                     |
+|66444557496|Sara      |May      |Country A  |Vaughn LLC                    |
+.
+.
+.
+
+5. Which companies saw a significant drop in earnings in Q4 compared to Q3 (e.g., >30%)?
+```sql
+SELECT
+    name,
+    q3_earnings,
+    q4_earnings,
+    ROUND(((q3_earnings - q4_earnings) / NULLIF(q3_earnings, 0)) * 100, 1) AS percentage_drop
+FROM companies
+WHERE 
+    q3_earnings > 0 AND
+    ((q3_earnings - q4_earnings) / q3_earnings) > 0.3
+ORDER BY percentage_drop DESC;
+```
+
+6. Identify employees who work in a company from a different country than their nationality.
+```sql 
+SELECT 
+	e.first_name, 
+	e.last_name,
+	cm.country_id,
+	e.nationality
+FROM employees AS e
+JOIN companies AS cm ON cm.id = e.company_id
+WHERE cm.country_id <> e.nationality;
+```
+
+7. What is the average and median employee salaries in each region?
+```sql
+SELECT 
+	region, 
+	ROUND(AVG(salary)), 
+	PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY salary) AS median
+FROM employees AS e
+JOIN companies AS cm ON cm.id = e.company_id
+JOIN countries AS c ON c.id = cm.country_id
+WHERE salary IS NOT NULL
+GROUP BY region;
+```
+
+8. Which country has the highest earnings per capita (total company earnings ÷ population)?
 ```sql
 SELECT c.name, (total_earnings/population) AS earnings_per_capita
 FROM countries AS c
@@ -15,7 +210,7 @@ ORDER BY earnings_per_capita DESC
 LIMIT 1;
 ```
 
-15. Calculate the employee payroll as a percentage of yearly earnings for each company. Flag companies where it's more than 70%.
+9. Calculate the employee payroll as a percentage of yearly earnings for each company. Flag companies where it's more than 70%.
 ```sql
 SELECT name, (total_payroll/yearly_earnings * 100) AS payroll_percentage
 FROM companies AS cm 
@@ -27,7 +222,7 @@ WHERE yearly_earnings > 0
  AND (total_payroll/yearly_earnings * 100) > 70;
 ```
 
-16. Find the average salary of employees per sector.
+10. Find the average salary of employees per sector.
 ```sql
 SELECT cm.sector, ROUND(AVG(salary))
 FROM companies AS cm
@@ -35,7 +230,7 @@ JOIN employees AS e ON cm.id = e.company_id
 GROUP BY cm.sector;
 ```
 
-17. Get the names of top 10 companies by employee count.
+11. Get the names of top 10 companies by employee count.
 ```sql
 SELECT cm.name, COUNT(e.id_number) AS employee_count
 FROM companies AS cm
@@ -45,7 +240,7 @@ ORDER BY employee_count DESC
 LIMIT 10;
 ```
 
-18. How many companies are there in each country?
+12. How many companies are there in each country?
 ```sql
 SELECT c.name  AS country_name, COUNT(cm.id) AS company_count
 FROM countries AS c
