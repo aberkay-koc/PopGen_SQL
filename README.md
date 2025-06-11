@@ -110,7 +110,7 @@ LIMIT 10;
 |Richards-Morrow|183911               |51.83              |6.000         |4.000                         |5.400          |
 |White and Sons|181642               |50.33              |5.300         |6.000                         |5.510          |
 |Sullivan, Taylor and Williams|189819               |50.44              |6.700         |5.300                         |6.280          |
-
+g
 
 
 2. The HR team of Adams Inc wants to ensure fair pay. Find the 10 highest-paid employees and check whether their salaries are significantly higher than the average salary in their sector.
