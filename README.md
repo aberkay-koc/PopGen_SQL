@@ -127,6 +127,65 @@ g
 - Overloaded if employee count > 1000
 7. Composite risk score: 1 point for each flag triggered
 8. Rank all companies by risk score (highest risk first)
+```sql
+WITH employee_metrics AS (
+    SELECT 
+        e.company_id,
+        COUNT(*) AS employee_count,
+        AVG(e.salary) AS avg_salary,
+        SUM(e.salary) AS total_payroll
+    FROM employees e
+    GROUP BY e.company_id
+),
+
+company_metrics AS (
+    SELECT 
+        c.id AS company_id,
+        c.name AS company_name,
+        co.name AS country,
+        c.yearly_earnings,
+        em.employee_count,
+        em.avg_salary,
+        em.total_payroll,
+        ROUND(c.yearly_earnings / NULLIF(em.employee_count, 0), 2) AS earnings_per_employee,
+        ROUND((em.total_payroll / NULLIF(c.yearly_earnings, 0)) * 100, 2) AS payroll_pct
+    FROM companies c
+    JOIN countries co ON co.id = c.country_id
+    LEFT JOIN employee_metrics em ON c.id = em.company_id
+),
+
+risk_flags AS (
+    SELECT 
+        *,
+        CASE WHEN payroll_pct > 70 THEN 'Yes' ELSE 'No' END AS high_payroll_risk,
+        CASE WHEN earnings_per_employee < 50000 THEN 'Yes' ELSE 'No' END AS low_earnings_flag,
+        CASE WHEN employee_count > 1000 THEN 'Yes' ELSE 'No' END AS overloaded_flag,
+        -- Composite score: 1 point per risk
+        (
+            CASE WHEN payroll_pct > 70 THEN 1 ELSE 0 END +
+            CASE WHEN earnings_per_employee < 50000 THEN 1 ELSE 0 END +
+            CASE WHEN employee_count > 1000 THEN 1 ELSE 0 END
+        ) AS risk_score
+    FROM company_metrics
+)
+
+SELECT 
+    company_name,
+    country,
+    employee_count,
+    ROUND(avg_salary, 2) AS avg_salary,
+    yearly_earnings,
+    earnings_per_employee,
+    payroll_pct,
+    high_payroll_risk,
+    low_earnings_flag,
+    overloaded_flag,
+    risk_score,
+    RANK() OVER (ORDER BY risk_score DESC, payroll_pct DESC) AS risk_rank
+FROM risk_flags
+ORDER BY risk_score DESC, payroll_pct DESC
+LIMIT 20;
+```
 
 
 **3. The HR team of Adams Inc wants to ensure fair pay. Find the 10 highest-paid employees and check whether their salaries are significantly higher than the average salary in their sector.**
