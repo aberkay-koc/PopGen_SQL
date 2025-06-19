@@ -179,7 +179,27 @@ WHERE c.id = 1;
 .
 
 
-5. Which companies saw a significant drop in earnings in Q4 compared to Q3 (e.g., >30%)?
+5. Payroll Risk Flagging - The company "Brown-Sandoval" wants you to flag the employees according to their salary levels.
+```sql
+SELECT
+	e.first_name || ' ' || e.last_name AS employee_name,
+	c.name AS company_name,
+	e.salary,
+	CASE 
+		WHEN salary > 100000 THEN 'High'
+		WHEN salary BETWEEN 50001 AND 100000 THEN 'Medium'
+		WHEN salary BETWEEN 1 AND 50000 THEN 'Low'
+		WHEN salary = 0 THEN 'Unemployed'
+		ELSE 'Unknown'
+	END AS salary_level
+FROM employees e
+JOIN companies c ON c.id = e.company_id
+WHERE c.name = 'Brown-Sandoval'
+ORDER BY salary DESC;
+```
+
+
+6. Which companies saw a significant drop in earnings in Q4 compared to Q3 (e.g., >30%)?
 ```sql
 SELECT
     name,
@@ -194,7 +214,7 @@ ORDER BY percentage_drop DESC;
 ```
 
 
-6. Identify employees who work in a company from a different country than their nationality.
+7. Identify employees who work in a company from a different country than their nationality.
 ```sql 
 SELECT 
 	e.first_name, 
@@ -207,7 +227,7 @@ WHERE cm.country_id <> e.nationality;
 ```
 
 
-7. What is the average and median employee salaries in each region?
+8. What is the average and median employee salaries in each region?
 ```sql
 SELECT 
 	region, 
@@ -221,7 +241,7 @@ GROUP BY region;
 ```
 
 
-8. Which country has the highest earnings per capita (total company earnings ÷ population)?
+9. Which country has the highest earnings per capita (total company earnings ÷ population)?
 ```sql
 SELECT c.name, (total_earnings/population) AS earnings_per_capita
 FROM countries AS c
@@ -234,7 +254,7 @@ LIMIT 1;
 ```
 
 
-9. Calculate the employee payroll as a percentage of yearly earnings for each company. Flag companies where it's more than 70%.
+10. Calculate the employee payroll as a percentage of yearly earnings for each company. Flag companies where it's more than 70%.
 ```sql
 SELECT name, (total_payroll/yearly_earnings * 100) AS payroll_percentage
 FROM companies AS cm 
@@ -247,7 +267,7 @@ WHERE yearly_earnings > 0
 ```
 
 
-10. Find the average salary of employees per sector.
+11. Find the average salary of employees per sector.
 ```sql
 SELECT cm.sector, ROUND(AVG(salary))
 FROM companies AS cm
@@ -256,7 +276,7 @@ GROUP BY cm.sector;
 ```
 
 
-11. Get the names of top 10 companies by employee count.
+12. Get the names of top 10 companies by employee count.
 ```sql
 SELECT cm.name, COUNT(e.id_number) AS employee_count
 FROM companies AS cm
@@ -267,7 +287,7 @@ LIMIT 10;
 ```
 
 
-12. How many companies are there in each country?
+13. How many companies are there in each country?
 ```sql
 SELECT c.name  AS country_name, COUNT(cm.id) AS company_count
 FROM countries AS c
