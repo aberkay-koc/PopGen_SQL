@@ -186,6 +186,18 @@ FROM risk_flags
 ORDER BY risk_score DESC, payroll_pct DESC
 LIMIT 20;
 ```
+### Resulting Table:
+|company_name           |country  |employee_count|avg_salary|yearly_earnings|earnings_per_employee|payroll_pct|high_payroll_risk|low_earnings_flag|overloaded_flag|risk_score|risk_rank|
+|-----------------------|---------|--------------|----------|---------------|---------------------|-----------|-----------------|-----------------|---------------|----------|---------|
+|Smith, Hall and Stewart|Country E|78            |94625.27  |8775225        |112502.88            |84.11      |Yes              |No               |No             |1         |1        |
+|Briggs Group           |Country D|59            |94268.54  |7327346        |124192.31            |75.91      |Yes              |No               |No             |1         |2        |
+|Walsh Group            |Country B|85            |93072.79  |12874156       |151460.66            |61.45      |No               |No               |No             |0         |3        |
+|Goodman and Sons       |Country C|80            |96144.99  |14453685       |180671.06            |53.22      |No               |No               |No             |0         |4        |
+|Doyle-Jackson          |Country A|57            |92689.47  |9983895        |175156.05            |52.92      |No               |No               |No             |0         |5        |
+.
+.
+.
+
 
 
 **3. The HR team of Adams Inc wants to ensure fair pay. Find the 10 highest-paid employees and check whether their salaries are significantly higher than the average salary in their sector.**
